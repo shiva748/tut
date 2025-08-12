@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const cookie = require("cookie-parser");
+app.use(cookie());
 
 // Import database connection
 require('./db/conn');

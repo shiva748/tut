@@ -53,3 +53,11 @@ exports.login = async (req, res) => {
         res.status(error.status).json({ result: false, message: error.message })
     }
 }
+
+exports.get_Profile = async (req, res) => {
+    try {
+        return res.status(200).json(req.user);
+    } catch (error) {
+        res.status(error.status || 400).json({ result: false, message: error.message })
+    }
+}
